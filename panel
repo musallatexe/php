@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+<table border="1">
+	<tr><td><b>İd</b></td>
+	<td><b>Ad</b></td>
+	<td><b>Mail</b></td>
+<td><b>Şifre</b></td>
+	<td><b>Kullanıcı Adı</b></td>
+	<td><b>Cinsiyet</b></td></tr>
+<?php
+include ("baglanti.php");
+$sec= "SELECT * FROM  uyeler";
+$sonuc= $baglan -> query($sec);
+if ($sonuc->num_rows>0) {
+	while ($cek=$sonuc->fetch_assoc()) {
+		echo "<tr>
+		<td>".$cek["uyeId"]."</td>
+		<td>".$cek["uyeAd"]."</td>
+		<td>".$cek["uyeMail"]."</td>
+		<td>".$cek["uyeSifre"]."</td>
+		<td>".$cek["uyeKAdi"]."</td>
+		<td>".$cek["uyeCinsiyet"]."</td>
+		</tr>";
+	}
+
+}
+
+
+?>
+
